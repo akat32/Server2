@@ -14,15 +14,23 @@ var UsersSchema = mongoose.Schema({
   passwd : {type : String}, // Password
   token: {type : String}, // 토큰
   emailList : [{
-    email : {type: String}, // 이메일
+    email : {type: String} // 이메일
+  }],
+  accountList : [{
+    email : {type : String}
   }]
 })
 
+var EmailsSchema = mongoose.Schema({
+  email: {type : String, unique: true}, // email
+  token: {type : String}
+})
 
 var Users = mongoose.model('users', UsersSchema);
+var Emails = mongoose.model('emails', EmailsSchema)
 
-require('./err')(UsersSchema);
+require('./err')(UsersSchema, EmailsSchema);
 
-export {Users};
+export {Users, Emails};
 
 export default db;

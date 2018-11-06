@@ -8,12 +8,12 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 
-import {Users} from './mongo';
+import {Users, Emails} from './mongo';
 require('./func')
 
 app.listen(3000, ()=>{
   console.log('Server on 3030')
 })
 
-require('./routes/auth')(app, Users, rndstring)
+require('./routes/auth')(app, Users, Emails, rndstring)
 require('./routes/email')(app, Users)

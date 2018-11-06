@@ -42,6 +42,39 @@
 
     HTTP 404 : { message : "Not found"}
 
+* POST /addAccount : Push New Email Account ( 쓰루 유저에 이메일 계정 추가 )
+
+> Params
+
+    email : {type: String, unique: true}, // 쓰루에 추가할 Email
+
+    token : {type: String} // 쓰루 유저의 토큰
+
+> Response
+
+    HTTP 200 : {
+      email : "입력한 이메일",
+      token : "유저 토큰"
+    }
+
+    HTTP 409 : { message : "already exist" }
+
+    HTTP 500 : { message : "ERR!"}
+
+* POST /addAccount : Push New Email Account ( 쓰루 유저에 이메일 계정 추가 )
+
+> Params
+
+    email : {type: String, unique: true}, // 쓰루에서 삭제할 Email
+
+    token : {type: String} // 쓰루 유저의 토큰
+
+> Response
+
+    HTTP 200 : { message : "success!" }
+
+    HTTP 500 : { message : "ERR!"}
+
 * POST /push : Push Email in List ( 이메일 추가 )
 
 > Params
