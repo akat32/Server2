@@ -12,7 +12,7 @@ import {Users, Emails} from './mongo';
 require('./func')
 
 app.listen(3000, ()=>{
-  console.log('Server on 3030')
+  console.log('Server on 3000')
 })
 
 require('./routes/auth')(app, Users, Emails, rndstring)

@@ -34,13 +34,23 @@ function email (app, Users) {
     }
     return res.status(200).json({message : "success!"})
   })
-  .post('/pull', async (req,res)=>{
+  .post('/pullOne', async (req,res)=>{
     var pull_email = { email : req.body.email }
     var result = await Users.update({token : req.body.token}, {
       $pull : {emailList : pull_email}
     })
     if(!result.ok) return res.status(500).json({message : "ERR!"})
     else return res.status(200).json({message : "success!"})
+  })
+  .post('/pull', async (req,res)=>{
+    for ( var i = 0; req.body.list[i] != null; i++) {
+      let pull_email = { email : req.body.list[i] }
+      let result = await Users.update({token : req.body.token}, {
+        $pull : {emailList : pull_email}
+      })
+      if(!result.ok) return res.status(500).json({message : "ERR!"})
+    }
+    res.status(200).json({message : "success!"})
   })
   .post('/list', async (req,res)=>{
     var result = await Users.findOne({token : req.body.token})

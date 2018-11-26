@@ -33,11 +33,12 @@
 > Response
 
     HTTP 200 : {
-      "token": "HtsVQIRpMEYjkbtm3L8tgPOoRFS6mx56YqqqRXH6",
-      "id": "asdasd",
-      "passwd": "1234",
-      "name": "이름",
-      "emailList": []
+    "SocialEmailList": [
+        {
+            "email": "aaa@aaa.com",
+            "passwd": "aaaaa"
+        }
+      ]
     }
 
     HTTP 404 : { message : "Not found"}
@@ -66,6 +67,8 @@
 > Params
 
     email : {type: String, unique: true}, // 쓰루에서 삭제할 Email
+
+    passwd : {type: String}, // Email의 passwd
 
     token : {type: String} // 쓰루 유저의 토큰
 
