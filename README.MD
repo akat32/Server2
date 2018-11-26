@@ -12,15 +12,9 @@
 
 > Response
 
-    HTTP 200 : {
-      "token": "HtsVQIRpMEYjkbtm3L8tgPOoRFS6mx56YqqqRXH6",
-      "id": "asdasd",
-      "passwd": "1234",
-      "name": "이름",
-      "emailList": []
-    }
+    HTTP 200 : { message : "success!" }
 
-    HTTP 409 : { message : "already exist"}
+    HTTP 409 : { message : "already exist" }
 
 * POST /signin : User signin ( 유저 로그인 )
 
