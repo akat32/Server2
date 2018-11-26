@@ -27,12 +27,24 @@
 > Response
 
     HTTP 200 : {
-    "SocialEmailList": [
+      "SocialEmailList": [
         {
             "email": "aaa@aaa.com",
-            "passwd": "aaaaa"
+            "passwd": "asdasd",
         }
-      ]
+      ],
+      "EmailList": [
+        {
+            "email": "asdasd@asd"
+        },
+        {
+            "email": "asdqwdqwd@aaa"
+        },
+        {
+            "email": "qeqwd@rtwe"
+        }
+      ],
+      "token": "ledOrx8svzbwXdjBi1A99XImN55DS5sZmuI9ePqj"
     }
 
     HTTP 404 : { message : "Not found"}

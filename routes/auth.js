@@ -22,7 +22,11 @@ function auth(app, Users, Emails, rndstring) {
       userEmail.token = undefined;
       list.push(userEmail)
     }
-    return res.status(200).json({SocialEmailList : list})
+    return res.status(200).json({
+      SocialEmailList : list,
+      EmailList : result.emailList,
+      token : result.token
+    })
   })
   .post('/addAccount', async (req,res)=>{
     var new_email = new Emails(req.body);
@@ -49,5 +53,8 @@ function auth(app, Users, Emails, rndstring) {
     result = await Emails.remove({token : req.body.token})
     if(result.ok) return res.status(500).json({message : "ERR!"})
     res.status(200).json({message : "success!"})
+  })
+  .post('/aa', async(req,res)=>{
+    res.send(await Users.find())
   })
 }
