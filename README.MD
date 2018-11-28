@@ -84,7 +84,7 @@
 
     HTTP 500 : { message : "ERR!"}
 
-* POST /push : Push Email in List ( 이메일 추가 )
+* POST /pushOne : Push Email in List ( 이메일 추가 )
 
 > Params
 
@@ -102,7 +102,23 @@
 
     HTTP 500 : { message : "ERR!" } // 서버 에러
 
-* POST /pull : Pull Emaill in List ( 이메일 제거 )
+* POST /push : Push Email list in list ( 이메일 여러개 추가 )
+
+> Params
+
+    token : {type : String}, // 유저 토큰
+
+    list : {type : Object} ( ex : { list : ["asd@asd.com", "asdasd@asd.com"] } )
+
+> Response
+
+    HTTP 200 : { message : "success!"}
+
+    HTTP 404 : { message : "User Not Found!"}
+
+    HTTP 500 : { message : "ERR!"}
+
+* POST /pullOne : Pull Email in List ( 이메일 제거 )
 
 > Params
 
@@ -115,6 +131,20 @@
     HTTP 200 : { message : "success!"} // 성공
 
     HTTP 500 : { message : "ERR!" } // 서버 에러
+
+* POST /pull : Pull Email List in List ( 이메일 여러 개 제거)
+
+> Params
+
+    token : {type : String}, // 유저 토큰
+
+    list : {type : Object} ( ex : { list : ["asd@asd.com", "asdasd@asd.com"] } )
+
+> Response
+
+    HTTP 200 : { message : "success!"}
+
+    HTTP 500 : { message : "ERR!"}
 
 * POST /list : Show Email List ( 이메일 리스트 보기 )
 
