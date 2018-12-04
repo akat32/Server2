@@ -170,6 +170,8 @@
 
     token : {type: String} // 유저 토큰
 
+    list : ["asd@asd.com", "dsa@dsa.com"] // 이메일 리스트 ( String Array )
+    
 > Response
 
     HTTP 200 : { message : "success!"} // 이메일이 리스트에 있을 시
